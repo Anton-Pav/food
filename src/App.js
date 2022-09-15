@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Header} from "./components/Header";
 import {Footer} from "./components/Footer";
 import {Home} from "./pages/Home";
@@ -11,9 +11,10 @@ import {Recipe} from "./pages/Recipe";
 function App() {
     return (
         <>
+
             <Header/>
             <main className='container content'>
-                <Routes>
+                <Routes basename='/food'>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/about' element={<About/>}/>
                     <Route path='/contact' element={<Contact/>}/>
@@ -23,6 +24,7 @@ function App() {
                 </Routes>
             </main>
             <Footer/>
+
         </>
     );
 }
